@@ -1,0 +1,20 @@
+### GET ALL BILLS
+GET http://localhost:5000/bills
+
+
+### ADD BILL
+POST http://localhost:5000/bills
+Content-Type: application/json
+
+{
+  "title": "Car Loan",
+  "amount": 8500,
+  "due_day": 25,
+  "reminder_time": "14:30",
+  "phone": "+91XXXXXXXXXX"
+}
+
+
+
+### DELETE BILLS
+DELETE http://localhost:5000/bills/4

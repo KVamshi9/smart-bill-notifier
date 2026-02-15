@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+  background: #f4f6f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form input {
+  width: 200px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  
+}
+
+
+.form button {
+  padding: 10px 20px;
+  border: none;
+  background: #00aeff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+
+.form button:hover {
+  background: #0056b3;
+}
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.paid-btn {
+  background: green;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

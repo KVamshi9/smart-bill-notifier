@@ -141,7 +141,9 @@ cron.schedule("* * * * *", async () => {
 
     console.log(`cron tick : ${new Date()}`)
 
-    const now = new Date()
+    const now = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+    )
 
     const todayDay = now.getDate()
     const currentTime = now.toTimeString().slice(0,5)

@@ -39,9 +39,10 @@ const sendWhatsApp = async (phone, text) => {
 }
 
 
-app.get("/bill", (req,res)=>{
-  res.send("OK")
+app.get("/health", (req,res)=>{
+  res.status(200).json({status:"ok"})
 })
+
   
 // CREATE BILL API
 
@@ -179,8 +180,22 @@ cron.schedule("* * * * *", async () => {
 
 
 const PORT = process.env.PORT || 5000
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Server running on port", PORT)
-})
+
+async function boot() {
+  try {
+    await db.query("SELECT 1")
+    console.log("DB connected")
+
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log("Server running on port", PORT)
+    })
+
+  } catch (err) {
+    console.error("Startup failed:", err.message)
+    process.exit(1)
+  }
+}
+
+boot()
 
 

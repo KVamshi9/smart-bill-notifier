@@ -1,23 +1,11 @@
 require("dotenv").config()
 const express = require("express")
-const app = express()
-
-const PORT = process.env.PORT
-
-app.get("/", (req,res)=>{
-  res.send("OK")
-})
-
-app.listen(PORT, "0.0.0.0", () => {
-  console.log("Server running on port", PORT)
-})
-
-
 const mysql = require("mysql2/promise")
 const cors = require("cors")
 const cron = require("node-cron")
 const twilio = require("twilio")
 
+const app = express()
 app.use(cors())
 app.use(express.json())
 
@@ -50,6 +38,11 @@ const sendWhatsApp = async (phone, text) => {
   }
 }
 
+
+app.get("/bill", (req,res)=>{
+  res.send("OK")
+})
+  
 // CREATE BILL API
 
 app.post('/bills', async (request, response) => {
@@ -183,4 +176,11 @@ cron.schedule("* * * * *", async () => {
     console.log("Cron Error:", error.message)
   }
 })
+
+
+const PORT = process.env.PORT || 5000
+app.listen(PORT, "0.0.0.0", () => {
+  console.log("Server running on port", PORT)
+})
+
 

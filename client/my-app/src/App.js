@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-const API = "http://localhost:5000";
+const API = "https://empowering-learning-production.up.railway.app";
 
 class App extends Component {
   state = {

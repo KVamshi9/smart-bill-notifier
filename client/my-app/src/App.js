@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-const API = "https://empowering-learning-production.up.railway.app";
+const API = process.env.REACT_APP_API;
 
 class App extends Component {
   state = {
